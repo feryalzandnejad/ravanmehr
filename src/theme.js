@@ -4,9 +4,11 @@ import {createMuiTheme } from '@material-ui/core/styles';
 export const theme = createMuiTheme({
     palette:{
         primary:{
-            light: 'rgba(233, 236, 239,1)',
-            main: 'rgb(1, 73, 124)',
-            dark: 'rgba(33, 37, 41,1)'
+            //light: 'rgba(233, 236, 239,1)',
+            main: 'rgb(241,241,241)',
+            light: 'rgba(0,0,0)',
+            //main: 'rgb(1, 73, 124)',
+            dark: 'rgb(241,241,241)',
         },
         secondary:{
             light:'rgb(242, 233, 228)',

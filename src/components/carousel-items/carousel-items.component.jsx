@@ -1,14 +1,16 @@
 import React from 'react';
-import {CarouselItemContainer} from './carousel-items.styles';
+import {CarouselItemContainer, TitleContainer} from './carousel-items.styles';
 
-const CarouselItems = ({title, content, imgSrc, imgAlt}) => {
+const CarouselItems = ({title, imgSrc, imgAlt}) => {
     
     return (
         <CarouselItemContainer>
-            <h1>{title}</h1>
-            <div>{content}</div>
+            <TitleContainer>
+                <h1>{title}</h1>
+            </TitleContainer>
             <img src={imgSrc} alt={imgAlt} />
         </CarouselItemContainer>
+
     )
 };
 

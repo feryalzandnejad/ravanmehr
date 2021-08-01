@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 
-export const ServicespageContainer = styled.div`
+export const MakeupContainer = styled.div`
     margin-top: 60px;
 `

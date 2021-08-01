@@ -1,10 +1,9 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Tab from '@material-ui/core/Tab';
-import { AppBarContainer, Insta, TabsContainer,InstaLink, LogoInsta, UserAcount,Drawer   } from './tabBar.styles';
+import { AppBarContainer, TabsContainer, UserAcount,Drawer} from './tabBar.styles';
 import { Link } from 'react-router-dom';
-import { auth } from '../../firebase/firebase.utils';
-import OutlinedButtons from '../userButton/userButton.componenet';
+import { connect} from 'react-redux';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import SwipeableTemporaryDrawer from '../quickLinks/quickLinks.component';
 
@@ -25,7 +24,7 @@ import SwipeableTemporaryDrawer from '../quickLinks/quickLinks.component';
     },
   }));
   
-  export default function FullWidthTabs({currentUser}) {
+  const FullWidthTabs = ({currentUser}) => {
   
     const classes = useStyles();
     const theme = useTheme();
@@ -33,19 +32,39 @@ import SwipeableTemporaryDrawer from '../quickLinks/quickLinks.component';
      const [tabItems, setTabItems] = React.useState(
          [
            {
-             title: 'خانه',
+             title: 'Home',
              link: '/' 
            },
            {
-            title: 'خدمات',
-            link: '/services' 
+            title: 'Makeup',
+            link: '/makeup' 
           },
           {
-            title: ' مشاوره انلاین',
-            link: '/onlineServices' 
+            title: 'Skincare',
+            link: '/skincare' 
           },
           {
-            title: 'تماس با ما',
+            title: 'Hair',
+            link: '/contactUs' 
+          },
+          {
+            title: 'Fragrance',
+            link: '/contactUs' 
+          },
+          {
+            title: 'Tools & Brushes',
+            link: '/contactUs' 
+          },
+          {
+            title: 'Bath & Body',
+            link: '/contactUs' 
+          },
+          {
+            title: 'Clean Beauty',
+            link: '/contactUs' 
+          },
+          {
+            title: 'Sale & Offers',
             link: '/contactUs' 
           }
          ]
@@ -66,7 +85,7 @@ import SwipeableTemporaryDrawer from '../quickLinks/quickLinks.component';
     return (  
       <div className={classes.root}>
         <AppBarContainer position='fixed' xs='false' >
-          <UserAcount>
+          {/* <UserAcount>
             
               {
                 currentUser ?
@@ -75,20 +94,14 @@ import SwipeableTemporaryDrawer from '../quickLinks/quickLinks.component';
                 <OutlinedButtons to='/signin'>ورود</OutlinedButtons>
               }
             
-            <Insta>
-              <InstaLink to="/https://instagram.com/ravanmehr.psychology?igshid=1qxf9tx444cv2" >
-                <LogoInsta />
-              </InstaLink>
-            </Insta>
-          </UserAcount>
-          <TabsContainer sm={matchesSm} value={value} onChange={handleChange} aria-label="full width tabs example">
-
-            <Drawer>
+          </UserAcount> */}
+          <Drawer>
               
               <SwipeableTemporaryDrawer />
 
               
-            </Drawer>
+          </Drawer>
+          <TabsContainer sm={matchesSm} value={value} onChange={handleChange} aria-label="full width tabs example">
             
               {
                 matchesSm ?
@@ -99,6 +112,7 @@ import SwipeableTemporaryDrawer from '../quickLinks/quickLinks.component';
                       <Tab component={Link} to={item.link} label={item.title} {...a11yProps(index)} key={index} />
                   ))
               }
+            
           </TabsContainer>
         </AppBarContainer>
         
@@ -106,4 +120,10 @@ import SwipeableTemporaryDrawer from '../quickLinks/quickLinks.component';
       
       
     );
-  }
+  };
+
+  const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+  });
+
+  export default connect(mapStateToProps)(FullWidthTabs);
