@@ -15,7 +15,6 @@ export const SigninAndSignup = styled.div`
     `;
 
 export const UserPanel = styled.div`
-    margin: 80px auto;
     margin-bottom: 0 !important;
     display:flex;
     justify-content:space-around;
@@ -25,14 +24,15 @@ export const UserPanel = styled.div`
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     background-color: ${ props => props.theme.palette.primary.light};
-    color: ${ props => props.theme.palette.secondary.dark};
+    color: ${ props => props.theme.palette.primary.dark};
 
     
 `;
 
 export const MainContainer = styled.div`
-    width: 100%;
+    margin-top: 150px;
+    margin-left:280px;
+    width: 850PX;
     height: 100%;
-    background-color: ${ props => props.theme.palette.secondary.dark};
     padding: 45px 0;
 `;

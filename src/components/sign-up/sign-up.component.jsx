@@ -2,7 +2,7 @@ import React from 'react';
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 import BasicTextFields from '../textFiled/textFiled.component';
 import OutlinedButtons from '../userButton/userButton.componenet';
-import { SignupButton } from './sign-up.styles';
+import { SignupButton ,SignupForm} from './sign-up.styles';
 
 
 const SignUp = () => {
@@ -13,7 +13,7 @@ const SignUp = () => {
         confirmPassword: ''
     })
 
-    const {displayName, email, password, confirmPassword } = values;
+    const {displayName, email, lastname, password, confirmPassword } = values;
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -55,15 +55,16 @@ const SignUp = () => {
 
     return (
 
-        <form onSubmit={handleSubmit} >
-            <BasicTextFields variant='outlined' type='text' value={displayName} label='displayName' text={'Display Name'} name=': نام کاربری '  handleChange={handleChange} required/>
-            <BasicTextFields variant='outlined' type='email' value={email} label='email' text={'Email'} name=':  ایمیل ' handleChange={handleChange} required/>
-            <BasicTextFields variant='outlined' type='text' value={password} label='password' text={'Password'} name=': رمز عبور' handleChange={handleChange} required />
-            <BasicTextFields variant='outlined' type='text' value={confirmPassword} label='confirmPassword' text={'ConfirmPassword'} name=': تکرار رمز عبور ' handleChange={handleChange} required/>
+        <SignupForm onSubmit={handleSubmit} >
+            <BasicTextFields variant='outlined' type='text' value={displayName} label='displayName'  name='FIRST NAME'  handleChange={handleChange} required/>
+            <BasicTextFields variant='outlined' type='text' value={lastname} label='last name'  name='LAST NAME' handleChange={handleChange} required />
+            <BasicTextFields variant='outlined' type='email' value={email} label='email' text={'Email'} name='EMAIL' handleChange={handleChange} required/>
+            <BasicTextFields variant='outlined' type='text' value={password} label='password' text={'Password'} name='PASSWORD' handleChange={handleChange} required />
+            <BasicTextFields variant='outlined' type='text' value={confirmPassword} label='confirmPassword' text={'ConfirmPassword'} name='CONFIRM PASSWORD' handleChange={handleChange} required/>
             <SignupButton >
-                <OutlinedButtons type='submit' onClick={handleSubmit}> ثبت نام</OutlinedButtons>
+                <OutlinedButtons bottunColor='black' type='submit' onClick={handleSubmit}>CREATE AN ACCOUNT</OutlinedButtons>
             </SignupButton>
-        </form>
+        </SignupForm>
 
     );
     

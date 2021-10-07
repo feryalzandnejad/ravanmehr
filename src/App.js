@@ -4,7 +4,7 @@ import { theme } from './theme';
 import { connect } from 'react-redux';
 import { ThemeProvider as MaterialThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider as StyledThemeProvider }from 'styled-components';
-import FullWidthTabs from './components/tabBar/tabBar.component';
+import Header from './components/header/header.component';
 import './App.css';
 import HomePage from './pages/homepage/homepage.component';
 import Skincare from './pages/skincare/skincare-page.component';
@@ -45,14 +45,14 @@ const App = ({setCurrentUser, currentUser}) => {
   return (   
     <MaterialThemeProvider theme={theme}>
       <StyledThemeProvider theme={theme}>
-          
-          <FullWidthTabs />
+
+           <Header />
           <Switch>
             <Route exact path='/' component={HomePage} />
             <Route  path='/Makeup' component={Makeup} />
             <Route  path='/skincare' component={Skincare} />
             <Route  path='/hair' component={Hair} />
-            <Route exact path='/signin' render={() => currentUser ?  <Redirect to='/' /> : <SignInAndSignUpPage />} />
+            <Route exact path='/signup' render={() => currentUser ?  <Redirect to='/' /> : <SignInAndSignUpPage />} />
           </Switch>
           
         

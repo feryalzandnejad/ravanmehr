@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import {TextfieldContainer} from './textField.styles';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -16,9 +17,9 @@ export default function BasicTextFields({label, handleChange, variant, name, req
   const classes = useStyles();
 
   return (
-    <div className={classes.root} noValidate autoComplete="off">
+    <TextfieldContainer className={classes.root} noValidate autoComplete="off">
       <h4>{name}</h4>
       <TextField id={label} label={text} variant={variant} onChange={handleChange} required={required}/>     
-    </div>
+    </TextfieldContainer>
   );
 }

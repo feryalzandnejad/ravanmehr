@@ -11,12 +11,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function OutlinedButtons({ children, component, to,  ...otherProps }) {
+export default function OutlinedButtons({ children, component, to, bottunColor,  ...otherProps}) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <UserbuttonContainer  component={Link} to={to} {...otherProps}>
+      <UserbuttonContainer  component={Link} to={to} {...otherProps} bottunColor={bottunColor}>
         {children}
       </UserbuttonContainer>
       

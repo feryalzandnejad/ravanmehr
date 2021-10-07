@@ -2,7 +2,7 @@ import React from 'react';
 
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DesktopMode from '../../components/singin-and-signup-desktopMode/signin-and-signup-desktopMode.component';
-import ScrollableTabsButtonAuto from '../../components/signin-and-signup-mobileMode/signin-and-signup-mobileMode.component';
+import MobileMode from '../../components/signin-and-signup-mobileMode/signin-and-signup-mobileMode.component';
 import { useTheme } from '@material-ui/core/styles';
 
 
@@ -17,7 +17,7 @@ const SignInAndSignUpPage = () => {
             {
                matchesSm ? 
 
-               <ScrollableTabsButtonAuto />
+               <MobileMode />
                : 
                <DesktopMode />
             }

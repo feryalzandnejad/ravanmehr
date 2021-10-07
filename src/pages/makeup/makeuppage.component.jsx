@@ -4,7 +4,7 @@ import { MakeupContainer } from './makeuppage.styles';
 const Makeup = () => (
     <MakeupContainer>
         <h1>
-            Services
+            MAKEUP
         </h1>
     </MakeupContainer>
 );

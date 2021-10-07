@@ -2,7 +2,9 @@ import React from 'react';
 import BasicTextFields from '../textFiled/textFiled.component';
 import OutlinedButtons from '../userButton/userButton.componenet';
 import {auth, signInWithGoogle }  from '../../firebase/firebase.utils';
-import {SigninButton} from './sign-in.styles';
+import {SigninButton, SigninForm} from './sign-in.styles';
+
+
 
 
 const SignIn = () =>  {
@@ -36,14 +38,14 @@ const SignIn = () =>  {
     }
 
         return(
-            <form onSubmit={handleSubmit} >
-                <BasicTextFields variant='outlined' value={state.email} label='email' text={'Email'} name=': نام کاربری و یا ایمیل ' handleChange={handelChange} required/>
-                <BasicTextFields variant='outlined' value={state.password} label='password' text={'Pssword'} name=':رمز عبور' handleChange={handelChange} required/>
+            <SigninForm onSubmit={handleSubmit} >
+                <BasicTextFields variant='outlined' value={state.email} label='email' text={'Email'} name='EMAIL ADDRESS' handleChange={handelChange} required/>
+                <BasicTextFields variant='outlined' value={state.password} label='password' text={'Pssword'} name='PASSWORD' handleChange={handelChange} required/>
                 <SigninButton>
-                    <OutlinedButtons  type='submit' onClick={handleSubmit}> ورود </OutlinedButtons>
-                    <OutlinedButtons onClick={signInWithGoogle}>ورود با اکانت گوگل</OutlinedButtons>
+                    <OutlinedButtons  type='submit' onClick={handleSubmit}> SIGN IN </OutlinedButtons>
+                    <OutlinedButtons onClick={signInWithGoogle}>SIGN IN WITH GOOGLE</OutlinedButtons>
                 </SigninButton>
-            </form>
+            </SigninForm>
         )
 };
 
