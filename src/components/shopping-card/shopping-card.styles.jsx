@@ -12,6 +12,7 @@ export const ShopCartContainer =styled.div`
     color: ${ props => props.theme.palette.secondary.dark};
     top:40px;
     right: 16px;
+    z-index: 5;
 `;
 
 export const CardBody = styled.div`

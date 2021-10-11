@@ -1,17 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
-
+import { toggleUserCartHidden } from '../../redux/user/user.actions';
 import { NavigationContainer, PersonIconContainer, LocalMallOutlinedIconContainer } from './navigation.styles';
-import MouseOverPopover from '../card-dropdown/card-dropdown.component';
+import SignInCart from '../card-dropdown/card-dropdown.component';
 import ShoppingCard from '../shopping-card/shopping-card.component';
 
 
-const Navigation = ({matchesMd, toggleCartHidden, cart}) => (
+const Navigation = ({matchesMd, toggleCartHidden, cart, profile, toggleUserCartHidden}) => (
     <NavigationContainer >
-        <MouseOverPopover>
+        <div onClick={toggleUserCartHidden}>
             <PersonIconContainer matchesMd={matchesMd} />
-        </MouseOverPopover>
+            {
+                profile ? null : <SignInCart/> 
+            } 
+        </div>
         <div onClick={toggleCartHidden}>
             <LocalMallOutlinedIconContainer matchesMd={matchesMd}/>
             {
@@ -25,11 +28,13 @@ const Navigation = ({matchesMd, toggleCartHidden, cart}) => (
 
 
 const mapStateToProps = state => ({
-    cart: state.cart.hidden
+    cart: state.cart.hidden,
+    profile: state.user.hidden
 });
 
 const mapDispatchToProps = dispatch => ({
-    toggleCartHidden: () => dispatch(toggleCartHidden())
+    toggleCartHidden: () => dispatch(toggleCartHidden()),
+    toggleUserCartHidden: () => dispatch(toggleUserCartHidden())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

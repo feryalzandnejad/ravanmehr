@@ -33,60 +33,70 @@ function CardCarousel() {
  
   const products = [
     {
+      id: 1,
       imgSrc: '/carousel-homepage/13.jpg',
       imgAlt: 'makeup',
       content:'content',
       price: '25$'
     },
     {
+      id: 2,
       imgSrc: '/carousel-homepage/6.jpg',
       imgAlt: 'makeup',
       content:'',
       price: '25$'
     },
     {
+      id: 3,
       imgSrc: '/carousel-homepage/8.jpg',
       imgAlt: 'makeup',
       content:'',
       price: '25$'
     },
     {
+      id: 4,
       imgSrc: '/carousel-homepage/11.jpg',
       imgAlt: 'makeup',
       content:'',
       price: '25$'
     },
     {
+      id: 5,
       imgSrc: '/carousel-homepage/7.jpg',
       imgAlt: 'makeup',
       content:'',
       price: '25$'
     },
     {
+      id: 6,
       imgSrc: '/carousel-homepage/9.jpg',
       imgAlt: 'makeup',
       content:'',
       price: '25$'
     },
     {
+      id: 7,
       imgSrc: '/carousel-homepage/15.jpg',
       imgAlt: 'makeup',
       content:'',
       price: '25$'
     },
     {
+      id: 8,
       imgSrc: '/carousel-homepage/16.jpg',
       imgAlt: 'makeup',
       content:'',
       price: '25$'
     },
     {
+      id: 9,
       imgSrc: '/carousel-homepage/14.jpg',
       imgAlt: 'makeup',
       content:'',
       price: '25$'
     },
     {
+      id: 10,
       imgSrc: '/carousel-homepage/10.jpg',
       imgAlt: 'makeup',
       content:'',
@@ -98,7 +108,7 @@ function CardCarousel() {
     <SliderContainer>
       <Slider {...config}>
         {
-        products.map((item, index) => <CardContainer key={index} imgSrc={item.imgSrc} imgAlt={item.imgAlt} content={item.content} price={item.price} />)
+        products.map((item) => <CardContainer key={item.id} item={item} />)
         }
       </Slider>
     </SliderContainer>

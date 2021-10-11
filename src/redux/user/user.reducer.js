@@ -1,8 +1,9 @@
 import {UserActionTypes} from './user.types';
 
 const INITIAL_STATE = {
-    currentUser : null
-}
+    currentUser : null,
+    hidden: true
+};
 
 const userReducer = (state = INITIAL_STATE , action) => {
     switch(action.type){
@@ -11,6 +12,12 @@ const userReducer = (state = INITIAL_STATE , action) => {
             return {
                 ...state,
                 currentUser: action.payload
+            }
+        case UserActionTypes.TOGGLE_USER_CART_HIDDEN :
+        
+            return {
+                ...state,
+                hidden : !state.hidden
             }
         default : 
         return state;
