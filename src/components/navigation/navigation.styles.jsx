@@ -7,13 +7,16 @@ export const NavigationContainer = styled(({...props}) => <div {...props} />)`
     flex-direction: row;
     justify-content: space-around;
     width: 100px;
-    padding-top:7px;
 `;
 
-export const PersonIconContainer = styled(({...props}) => <PersonIcon {...props} />)`
+export const PersonIconContainer = styled(({...props}) => <PersonIcon  {...props} />)`
     color: ${ props => props.matchesMd ? 'white' : 'black'};
+    cursor: pointer;
+    margin-top: 8px;
 `;
 
-export const LocalMallOutlinedIconContainer = styled(({...props}) => <LocalMallOutlinedIcon {...props} />)`
+export const LocalMallOutlinedIconContainer = styled(({...props}) => <LocalMallOutlinedIcon  {...props} />)`
      color: ${ props => props.matchesMd ? 'white' : 'black'};
+     cursor: pointer;
+     
 `;

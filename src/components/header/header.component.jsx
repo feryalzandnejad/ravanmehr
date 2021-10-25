@@ -6,9 +6,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import HeaderIcons from '../header-icons/headerIcons.component';
 import FullWidthTabs from '../full-width-tabs/full-width-tabs.component';
 
-
 const Header = () => {
-    
     const theme = useTheme();
     const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
     const matchesXs = useMediaQuery(theme.breakpoints.down('xs'));

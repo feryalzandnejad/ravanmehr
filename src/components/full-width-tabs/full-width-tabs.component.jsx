@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect} from 'react-redux';
 import SwipeableTemporaryDrawer from '../drawer/drawer.component';
 import Navigation from '../navigation/navigation.component';
-
+import { withRouter } from 'react-router-dom';
 
 
   
@@ -17,8 +17,8 @@ import Navigation from '../navigation/navigation.component';
   }
   
   
-  const FullWidthTabs = ({currentUser, matchesMd, data}) => {
-  console.log(data)
+  const FullWidthTabs = ({currentUser, matchesMd, data, history}) => {
+  console.log(history)
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
     
@@ -61,4 +61,4 @@ import Navigation from '../navigation/navigation.component';
   });
   
 
-  export default connect(mapStateToProps)(FullWidthTabs);
+  export default withRouter(connect(mapStateToProps)(FullWidthTabs));

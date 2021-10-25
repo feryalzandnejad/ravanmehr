@@ -13,10 +13,11 @@ export const ShopCartContainer =styled.div`
     top:40px;
     right: 16px;
     z-index: 5;
+    overflow: scroll;
 `;
 
-export const CardBody = styled.div`
-    height:240px;
+export const CardContainer = styled.div`
+    height:340px;
     display: flex;
     flex-direction: column;
     overflow: scroll;
@@ -30,4 +31,9 @@ export const ButtonContainer= styled.div`
     span{
         font-size: 16px;
     }
+`;
+
+export const CartEmty = styled.span`
+    font-size: 18px;
+    margin: 80px auto;
 `;

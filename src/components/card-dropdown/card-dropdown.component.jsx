@@ -6,7 +6,8 @@ import { SigninText, CardDropdownContainer, CreateaccountContainer, Title } from
 import { connect} from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
 import Divider from '@material-ui/core/Divider';
-
+import {selectCurrentUser} from '../../redux/user/user.selectors';
+import {createStructuredSelector} from 'reselect';
 
 
 const SignInCart = ({currentUser}) => {
@@ -34,8 +35,8 @@ const SignInCart = ({currentUser}) => {
   );
 }
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser,
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser
   });
   
   export default connect(mapStateToProps)(SignInCart);

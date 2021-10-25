@@ -14,7 +14,7 @@ const CardContainer = ({item, addItem}) => {
             </ImageContainer>
             <CardBody>
                 <ContentContainer>{content}</ContentContainer>
-                <PriceContainet>{price}</PriceContainet>
+                <PriceContainet>${price}</PriceContainet>
                 <OutlinedButtons onClick={() => addItem(item)}>ADD TO BAG</OutlinedButtons>
             </CardBody>
         </FullCardContainer>
